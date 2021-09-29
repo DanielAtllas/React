@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>React - Introdução</title>
+        <meta name="description" content="Esta é uma página que aborda assuntos e estudos sobre react">
+    </head>
+
+    <body>
+        <h1>React - Introdução</h1>
+        
+        <p>Basicamente, a primeira dúvida do desenvolvedor está em decidir entre quais dos <i>reacts</i> escolher para iniciar seus estudos, <i><strong>react.js</strong></i> ou <i><strong>react native</strong></i>. A grande questão, é que em tese e de modo geral, os dois possuem uma mesma lógica e sintaxe semelhante na criação de seus códigos, se difereindo apenas de nomeclaturas e objetivo, uma vez que o <i>react js</i> possui foco em <strong>aplicações web</strong> e o <i>react native</i> com foco em <strong>desenvolvimento mobile</strong>.</p>
+        <ul>
+            <li>React Js</li>
+            <ul>
+                <li>Biblioteca</li>
+                <li>Aplicações web</li>
+            </ul>
+            <br>
+            <li>React Native</li>
+            <ul>
+                <li>Framework</li>
+                <li>Desenvolvimento mobile</li>
+            </ul>    
+        </ul>
+        <p>Diante disso, focaremos nossos estudos no <i><strong>react js</strong></i>, de forma a entendermos melhor seu processo de desenvolvimento. Portanto, comecemos com a grande pergunta:</p>
+        
+        <h2>O que é React?</h2>
+        
+        <p>Como mencionado, o <i>react</i> é uma <strong>biblioteca</strong> utilizada para criar <strong>interfaces para usuário</strong>. Além disso, devido ter sua sintaxe clara, pode ser utilizado em diferentes aplicações como: web, mobile e etc. Dessa forma, sua grande característica está no uso de <strong>componentes</strong>, ou seja, seu desenvolvimento é separado em partes que irão conter na aplicação, como no exemplo abaixo:</p>
+        
+        <img src="https://www.techdiagonal.com/wp-content/uploads/2019/08/React-components-blog-image.jpg">
+        
+        <p>Podemos dizer, que o <i>react</i> de modo geral, nada mais é do que uma extensão/biblioteca <strong>javaScript</strong>, devido a sua sintaxe e implementação estar diretamente relacionada a códigos <i>.js</i>. Dessa forma, para iniciar suas implementações, o desenvolviedor deverá ter em sua máquina <strong>instalado o <i>Node Js</i></strong>, sendo a extensão necessária para a criação de programas na linguagem javaScript.</p>
+        
+        <hr>
+        <h2>Start do servidor</h2>
+        
+        <p>Tendo entendido o conceito geral do que é o <i>react</i> e para que ele serve, podemos partir para a prática e começarmos as implementações de nosso primeiro programa. Como mencionado anteriormente, existe a necessidade do desenvolvedor ter instalado em sua máquina o <i>Node Js</i> para que a aplicação javaScript possa rodar e ser executada. Após isso, tendo definido o diretório onde a aplicação ficará armazenada, deveremos <strong>abrir o console/cmd/shell</strong> e darmos o seguinte comando:</p>
+        
+        <pre><strong>npx create-react-app .</strong></pre>
+        
+        <p>Este comando tem como função facilitar o processo de criação de aplicações em <i>react</i>, sendo desenvolvido pelo Facebook afim de cooperar com seus desenvolvedores na criação de novos programas. Dessa forma, esta extensão dará ao usuário as principais necessidades utilizadas em um projeto <i>react</i> para o desenvolvedor!</p>
+        
+        <p>Após a instalação desta extensão estar completa, poderá ser percebido a criação automática de alguns arquivos no diretório em questão, os quais serão necessários para o projeto. Entre eles, vale destacar o arquivo <strong><i>package.json</i></strong>, o qual é necessário para todo e qualquer projeto que utiliza do <i>Node Js</i>. Este contém as configurações necessárias para rodar e executar o projeto <i>react</i>. Para termos certeza de que os primeiros passos foram implementados correntamente, podemos iniciar logo de cara o programa (mesmo que não tenha sido implementado nada), onde será exibido a interface que foi carregada junto a extensão mencionada no comando anteriormente. Utilizamos então o comando:</p>
+        
+        <pre><strong>npm start</strong></pre>
+        
+        <p>Podemos perceber então, que nosso projeto está criado em sua forma primária e podendo ser executado sem nenhum erro. Após isso, vá no diretório <i><strong>public</strong></i> e veja o arquivo de nome <i><strong>index</strong></i>. Neste arquivo, podemos perceber que seu corpo foi implementando utilizando recursos de <strong>html e css</strong>. Além disso, no <i>body</i> do arquivo podemos ver a tag de criação de uma <i>div</i> com o id de <strong><i>root</i></strong> (<strong>neste arquivo, está implementada a primeira interface da aplicação, ou seja, caso o usuário deseje implementar algo que altere o fundo da tela, deverá ser alterado aqui no <i>body</i></strong>). Esta <i>div</i>, faz uma conexão com outro arquivo (arquivo <i>/src/<strong>index.js</strong></i>) que fornece a este, as configurações necessárias para um projeto <i>react</i>, inserindo os componentes necessários, renderizando-os e aplicando no projeto <i>react</i>.</p>
+        
+        <p>Alguns outros arquivos podem, no momento, serem julgados como <strong>desncessários</strong>, tendo apenas algumas funcionalidades de sistema que não alteram a rotina principal da aplicação. Portanto, por medidas de capricho e eliminação de lixo, podemos deletar os seguintes arquivos:</p>
+        
+        <ul>
+            <li>App.test.js</li>
+            <br>
+            <li>logo.svg</li>
+            <br>
+            <li>reportWebVit</li>
+            <br>
+            <li>setupTests.js</li>
+        </ul>
+        
+        <p>Após isso, por termos deletados tais arquivos, deveremos retirar sua importação realizada no arquivo <i>index.js</i> e retirar todo o conteúdo escrito a partir da linha 13 até a linha 18. Além disso, podemos ir até o arquivo <i>App.css</i> e deletar todos os comandos lá escritos (isto, porque tudo aquilo será um lixo para o programador e podemos utilizar este campo para estilizarmos nossa aplicação da forma que desejarmos).</p>
+        
+        <p><strong>Por se tratar de uma aplicação <i>React</i>, algumas funcionalidades são exclusivas desta linguagem. Portanto, altere o nome do arquivo <i>/src/App.js</i> para <i>/src/App.jsx</i> (a clausula de definição para arquivos <i>react</i>, sendo .jsx). Açém disso, todos os componentes criados, devem seguir esta mesma ideia e portanto, a identificação .jsx</strong></p>
+        
+        <p>Após isso, podemos entrar no arquivo de nome <i>/src/<strong>App.js</strong></i>, o qual é o arquivo que contém o nosso primeiro componente criado, com o nome de <strong><i>function app()</i></strong>.</p>
+        
+        <p>Basicamente, é neste arquivo em que focaremos nossas primeiras implementações e por isso, a primeira coisa se fazer, é <strong>apagar todos os comandos do arquivo</strong>! Exatamente, apague todos os comandos para que possamos criar nossa aplicação do zero e assim inserirmos apenas os comandos que julgarmos necessários.</p>
+        
+        <p>A partir deste ponto, todos os arquivos da aplicação estão em sua forma primitiva e portanto, devemos molda-los para criar nossa primeira aplicação!</p>
+        
+    </body>
+</html>

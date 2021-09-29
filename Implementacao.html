@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>React - Implementação</title>
+        <meta name="description" content="Esta é uma página que aborda assuntos e estudos sobre react">
+    </head>
+
+    <body>
+        <h1>React - Implementação</h1>
+        
+        <p>Bom, a partir deste ponto, temos compreendido toda a estrutura e funcionamento base do <i>React</i> e agora, podemos partir para a nossa implementação dos códigos e finalmente darmos forma ao nosso desenvolvimento. O primeiro comando a ser dado no arquivo, será o de importação do <i>react</i>, através do comando:</p>
+        
+        <pre><strong>import React from 'react'</strong></pre>
+        
+        <p><strong>Todos os arquivos <i>react</i> de nossa aplicação, devem ter esta importação para seu funcionamento, sejam eles componentes ou não.</strong></p>
+        
+        <p>Este comando faz com que todos os códigos implementados abaixo deste, sejam interpretados pelo arquivo como códigos <i>react</i> e assim aplicados.</p>
+        
+        <p><strong>Em relação aos demais arquivos, </strong></p>
+
+        <p>Após, podemos criar novamente o nosso bloco de componente, seguindo por exemplo, o comando:</p>
+        
+        <pre>
+        
+        <strong>const</strong> App = () => {
+            <strong>return(
+                &lt;>
+                    &lt;h1></strong> Hello World! <strong>&lt;/h1></strong>
+                &lt;/>
+            )
+        }
+        
+        <strong>export default App;</strong>
+        </pre>
+        
+        <p>Explicando melhor este pequeno pedaço de código, temos os seguintes comandos:</p>
+        
+        <ul>
+            <li><strong><i>const App</i></strong> - Comando para criação do componente de nome <i>App</i></li>
+            <br>
+            <li><strong><i>return()</i></strong> - Campo de implementação do código que irá compor o componente em questão, de forma que o componente retorne ao arquivo <i>index</i> os comandos nele implementados.</li>
+            <br>
+            <li><i><strong>export default App;</strong></i> - Comando de exportação deste componente para arquivos terceiros (serve como uma permissão de uso deste para demais arquivos).</li>
+        </ul>
+        
+        <p><strong>OBS: Como dica, saiba que ao inserir o comando <i>imr</i> e o comando <i>sfc</i> e aprtamos a tecla de <i>tab</i>/complemento, estes comandos principais serão auto implementados no código.</strong></p>
+        
+        <p>Vale lembrar que o <i>react</i> possui a possibilidade de utilizar comandos semelhantes ao javaScript e por isso, podemos abusar deste conhecimento para implementações em nosso código, como por exemplo o usu de variáveis, através do comando <i>const</i>. Como na descrição exemplar abaixo:</p>
+        
+        <pre>
+        <strong>const</strong> App = () => {
+            <strong>let</strong> message = "Hello World";
+        
+            <strong>return(
+                &lt;>
+                    &lt;h1></strong> {message} <strong>&lt;/h1></strong>
+                &lt;/>
+            )
+        }
+        
+        <strong>export default App;</strong>
+        </pre>
+        
+        <p>Porém, existe algo que deve ser comentado para os desenvolvedores <i>react</i>, pois nas linguagens de programação comuns, temos o hábito de declar uma variável e seu valor (como no exemplo acima com a variável <i>message</i>) e durante o percorrer do código, alterarmos este valor quando julgarmos necessário. Porém, no <i>react</i> este tipo de trabalho requer uma diferente imlementação para variável, devendo assim declará-la como <strong>state</strong>, ou seja, através desta declaração podemos <strong>alterar o valor de uma variável sempre que julgarmos necessário</strong>, fazendo com que a aplicação <i>react</i> reaja e renderize o seu novo valor.</p>
+        
+        
+        <p>Para isso, segue abaixo um exemplo de como utilizarmos deste recurso:</p>
+        
+        <pre>
+        <strong>const</strong> App = () => {
+            <strong>const</strong> [message, setMessage] = <strong>useState("Hello World");</strong>
+        
+            <strong>return(</strong>
+
+                &lt;>
+                    <strong>&lt;div className="container"></strong> {message} <strong>&lt;/div></strong>
+                    
+                    <strong>&lt;button onClick={() => </strong>setMessage("Olá Mundo!")}>
+                        Mudar Mensagem
+                    <strong>&lt;/button></strong>
+                &lt;/>
+            )
+        }
+        
+        <strong>export default App;</strong>
+        </pre>
+        
+        <p>Basicamente, em sua declaração devemos passar o nome da variável (<i>message</i>) e também a função que terá o poder de alterar seu valor (<i>setMessage</i>). Em seguida, é usado o comando <i>useState()</i> para atribui-la a este recurso (vale lembrar que ao utilizar deste comando, deverá automaticamente importar a classe de mesmo nome).</p>
+        
+        <p>Outra questão que vale a pena ressaltar, é o fato de podermos <strong>importar arquivos</strong> para o nosso programa <i>react</i>, como por exemplo a importação de um arquivo <i>.css</i> (por utilizar uma implementação de código semelhante ao HTML, o <i>react</i> também suporta códigos e arquivos do tipo <i>style</i> da linguagem CSS). Para isso, utilizamos do comando <strong><i>import</i></strong>, como no exemplo a seguir:</p>
+        
+        <pre><strong>import "./App.css"</strong></pre>
+        
+        <hr>
+        <h2>Componentes</h2>
+        
+        <p>Como mencionado, os componentes são a principal base de uso do <i>React</i>, os quais ao serem configurados, dão forma a implementação e por isso, eles funcionam de forma <strong>separada</strong>, ou seja, cada componente tem sua função distinta na aplicação, mas que coopera com os demais implementados. Diante disso, podemos deduzir que requer um certo domínio de <strong>organização</strong> para com o seu desenvolvimento. Então, o recomendado a ser feito, é <strong>criar um diretório em que os arquivos dos componentes serão armazenados</strong>, como por exemplo um diretório <i>src/components</i>.</p>
+        
+        <p>Vamos agora criar nosso primeiro componente, seguindo a ideia de exibição de "<i>Hello World</i>" em nossa interface. Portanto, criemos nosso componente de nome <i><strong>Hello.jsx</strong></i> e demos os comandos essênciais de react:</p>
+        
+        <pre>
+        <strong>import React from 'react'
+        
+        const</strong> Hello = () => {
+        
+            <strong>return(
+                
+            )</strong>
+        }
+        
+        <strong>export default Hello;</strong>
+        </pre>
+        
+        <p>E demos o comando de titulo, da seguinte forma:</p>
+        
+        
+    </body>
+</html>

@@ -92,6 +92,40 @@
         <p>Outra questão que vale a pena ressaltar, é o fato de podermos <strong>importar arquivos</strong> para o nosso programa <i>react</i>, como por exemplo a importação de um arquivo <i>.css</i> (por utilizar uma implementação de código semelhante ao HTML, o <i>react</i> também suporta códigos e arquivos do tipo <i>style</i> da linguagem CSS). Para isso, utilizamos do comando <strong><i>import</i></strong>, como no exemplo a seguir:</p>
         
         <pre><strong>import "./App.css"</strong></pre>
+
+        <hr>
+        <h2>Props</h2>
+
+        <p>Ótimo, agora mudremos um pouco o exemplo e partiremos para um novo modelo de projto, o qual irá exemplificar funções mais complexas 
+            do React Js. Imagine então, criar uma aplicação de <strong>armazenamento de tarefas</strong>. Ou seja, uma aplicação em que possamos
+            incluir tarefas diárias e exibir as que já foram/não foram completadas.
+        </p>
+
+        <p>Para este processo, será preciso ter poder de inclusão de objeto na aplicação certo? A inclusão de novas tarefas. Diante disso, utilizaremos
+            novamente do composto <i>useState</i>, mas de forma a possuir N objetos dentro deste. Da seguinte forma:
+        </p>
+
+        <pre>
+            const [tasks, setTasks] = useState([
+                {
+                    id: 0,
+                    task: 'Estudar React',
+                    finished: false
+                },
+                {
+                    id: 1,
+                    task: 'Estudar React Native',
+                    finished: true
+                },
+            ]); 
+        </pre>
+
+        <p>Perceba então, que cada tarefa (objeto) possui seus dados únicos, as quais são de escolha do programador a criação e nome. Neste caso, 
+            <strong><i>id:</i></strong> Posição do elemento, <strong><i>task:</i></strong> Conteúdo da tarefa, <strong><i>finished:</i></strong> 
+            valor boleano de validação.
+        </p>
+
+        <p>Dentre esses, o único que deve ser mantido para todo e qualquer objeto, é o de <strong><i>id:</i></strong>. Além disso, esses objtos que foram implementados na aplicação, são chamados de <strong>props</strong> no React.</p>
         
         <hr>
         <h2>Componentes</h2>
